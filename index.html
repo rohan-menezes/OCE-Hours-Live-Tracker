@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+
+    <title>OCE Volunteer Fair</title>
+
+    
+    <!-- Bootstrap core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script>
+
+      $(document).ready(function(){
+
+        jQuery.get('data.txt', function(data) {
+            $("#test").html(data)
+        });
+
+        function testFunc() {
+          jQuery.get('data.txt', function(data) {
+            console.log(data)
+            $("#test").html(data)
+          }); 
+        }
+
+        window.setInterval(testFunc, 500);
+        testFunc();
+
+      });
+
+    </script>
+
+    <style>
+
+      .panel-title a {
+        display: block;
+        padding: 10px 15px;
+        margin: -10px -15px;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <center><p style="font-size:50px; font-family:verdana">Total Number of Hours Committed:</p>
+    <h1 id="test" style="font-size:250px; font-family:verdana">Hello!</h1></center>
+  </body>
+</html>
